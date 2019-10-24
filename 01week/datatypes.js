@@ -17,7 +17,6 @@ console.log(integer);
 console.log(typeof integer);
 
 // Create a function that takes in different date types and prints out their type
-
 let firstBool = true;
 let nada = null;
 let lacksDefinition = undefined;
@@ -36,23 +35,23 @@ isTypeOf(firstNum);
 isTypeOf(notTheNum);
 isTypeOf(aString);
 
-// Function that adds two numbers
+// "" that adds two numbers
 let num2 = 55
 let num3 = 8
 let sum = (num2 + num3);
 console.log(sum);
 
-// Function that runs when 2 statements are true
+// "" that runs when 2 statements are true
 if('num2 = 55' && 'num3 = 8')
   console.log('Both are true.');
 
 
-// "" when 1 of 2 statments are true
+// "" that runs when 1 of 2 statments are true
 if('num2 = 55' && 'num4 !=7') {
   console.log('One of these is true.');
 }
 
-// "" when neither statements are true
+// "" that runs when neither statements are true
 if('num2 != 23' && 'num4 !=7') {
   console.log('Neither statement is true.');
 }
