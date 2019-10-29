@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.football {
+  display: flex;
+  width: 95%;
+  height: 7%;
+  margin: 45% auto;
+  background: royalblue;
+}
+
+.team1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 30%;
+  background: blue;
+}
+
+.timeouts {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.timeouts .timeout {
+  width: 30%;
+  background: white;
+}
+
+.score1 {
+  height: 100%;
+  width: 7%;
+  background: darkblue;
+}
+
+.ball {
+  width: 100%;
+  height: 5%;
+  background: yellow;
+}
+
+.team2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 30%;
+  background: silver;
+}
+
+.score2 {
+  height: 100%;
+  width: 7%;
+  background: gray;
+}
+
+.right-side {
+  display: flex;
+  height: 100%;
+  width: 40%;
+  background: black;
+}
+
+.quarter {
+  width: 15%;
+}
+
+.gameclock {
+  width: 25%;
+}
+
+.playclock {
+  width: 25%;
+}
+
+.down-and-yardage {
+  width: 35%;
+}
