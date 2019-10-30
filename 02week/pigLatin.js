@@ -10,9 +10,36 @@ const rl = readline.createInterface({
 
 function pigLatin(word) {
 
-  // Your code here
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+  word = word.toLowerCase().trim();
+  let storeIndex = 0;
 
+  for (let i=0; i<word.length; i++) {
+    for (let j=0; j<vowels.length; j++) {
+      if (word[i] === vowels[j]) {
+        storeIndex = i;
+        const firstString = word.slice(0, storeIndex);
+        const secondString = word.slice(storeIndex);
+        if (storeIndex === 0) {
+          return secondString + firstString + 'yay';
+        }
+          return secondString + firstString + 'ay';
+      }
+    }
+  }
 }
+  
+
+//   if (vowels.includes(firstLetter)) {
+//     return word + 'yay';
+// } else {
+//   return word + 'ay';
+
+  // (vowels.includes(secondLetter)) {
+  //   return word.shift
+  // }
+
+
 
 
 function getPrompt() {
