@@ -4,6 +4,7 @@
 
 html, body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -12,7 +13,7 @@ html, body {
   display: flex;
   width: 95%;
   height: 7%;
-  margin: 45% auto;
+  margin: 45% auto 0 auto;
   background: royalblue;
 }
 
@@ -85,4 +86,11 @@ html, body {
 
 .down-and-yardage {
   width: 35%;
+}
+
+button {
+  height: 45px;
+  width: 75px;
+  background: hotpink;
+  margin: 45px 45%;
 }
