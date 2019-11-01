@@ -25,22 +25,95 @@ function printBoard() {
 
 function horizontalWin() {
   // Your code here
+  // Check the rows of the board for a match
+  if (
+    board [0][0] === playerTurn && 
+    board [0][1] === playerTurn && 
+    board [0][2] === playerTurn
+  ) { 
+    return true;
+  } else if (
+    board [1][0] === playerTurn && 
+    board [1][1] === playerTurn && 
+    board [1][2] === playerTurn
+  ) {
+    return true;
+  } else if (
+    board [2][0] === playerTurn && 
+    board [2][1] === playerTurn && 
+    board [2][2] === playerTurn
+  ) {
+    return true;
+  }
+    return false;
 }
 
 function verticalWin() {
   // Your code here
+  // Check the columns of the board
+  if (
+    board [0][0] === playerTurn && 
+    board [1][0] === playerTurn && 
+    board [2][0] === playerTurn
+  ) { 
+    return true;
+  } else if (
+    board [0][1] === playerTurn && 
+    board [1][1] === playerTurn && 
+    board [2][1] === playerTurn
+  ) {
+    return true;
+  } else if (
+    board [0][2] === playerTurn && 
+    board [1][2] === playerTurn && 
+    board [2][2] === playerTurn
+  ) {
+    return true;
+  }
+    return false;
 }
 
 function diagonalWin() {
   // Your code here
+  // Check for a line pattern top left to bottom right on the board
+  // "" top right to bottom left
+  if (
+    board [0][0] === playerTurn && 
+    board [1][1] === playerTurn && 
+    board [2][2] === playerTurn
+  ) { 
+    return true;
+  } else if (
+    board [0][2] === playerTurn && 
+    board [1][1] === playerTurn && 
+    board [2][0] === playerTurn
+  ) {
+    return true;
+  }
+    return false;
 }
 
 function checkForWin() {
   // Your code here
+  // Check for horizontal, vertical, and diagonal wins
+  // Return true if h or v or d wins
+
+  if (verticalWin() || horizontalWin() || diagonalWin()) {
+  return true;
+}
 }
 
 function ticTacToe(row, column) {
-  // Your code here
+  // Manipulate the board array (place X or O) based on user input (row, column)
+  let selectedRow = board[row];
+  selectedRow[column] = playerTurn;
+
+// Manipulate playerTurn variable, switch from X to O or 0 to X
+if (playerTurn === 'X') {
+  playerTurn = 'O';
+} else if  (playerTurn === 'O') {
+  playerTurn = 'X';
+}
 }
 
 function getPrompt() {
@@ -64,22 +137,30 @@ if (typeof describe === 'function') {
   describe('#ticTacToe()', () => {
     it('should place mark on the board', () => {
       ticTacToe(1, 1);
-      assert.deepEqual(board, [ [' ', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
+      assert.deepEqual(board, [ [' ', ' ', ' '], 
+                                [' ', 'X', ' '], 
+                                [' ', ' ', ' '] ]);
     });
     it('should alternate between players', () => {
       ticTacToe(0, 0);
       assert.deepEqual(board, [ ['O', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
     });
     it('should check for vertical wins', () => {
-      board = [ [' ', 'X', ' '], [' ', 'X', ' '], [' ', 'X', ' '] ];
+      board = [ [' ', 'X', ' '], 
+                [' ', 'X', ' '], 
+                [' ', 'X', ' '] ];
       assert.equal(verticalWin(), true);
     });
     it('should check for horizontal wins', () => {
-      board = [ ['X', 'X', 'X'], [' ', ' ', ' '], [' ', ' ', ' '] ];
+      board = [ ['X', 'X', 'X'], 
+                [' ', ' ', ' '], 
+                [' ', ' ', ' '] ];
       assert.equal(horizontalWin(), true);
     });
     it('should check for diagonal wins', () => {
-      board = [ ['X', ' ', ' '], [' ', 'X', ' '], [' ', ' ', 'X'] ];
+      board = [ ['X', ' ', ' '], 
+                [' ', 'X', ' '], 
+                [' ', ' ', 'X'] ];
       assert.equal(diagonalWin(), true);
     });
     it('should detect a win', () => {
