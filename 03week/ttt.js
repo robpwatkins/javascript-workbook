@@ -1,14 +1,13 @@
-function test() {
-  console.log('test');
-}
-
-// document.getElementById("corner").addEventListener('click', test);
-
 const squares = document.querySelectorAll('.board-square');
 
 squares.forEach((item) => {
   item.addEventListener('click', handleClick);
 });
+
+// function resetGame() {
+//   playerTurn = 'X';
+//   square.textContent = '';
+// }
 
 function handleClick (event) {
   console.log({target: event.target});
@@ -18,8 +17,6 @@ function handleClick (event) {
 
   let squareCol = square.dataset.col;
   let squareRow = square.dataset.row;
-
-  // console.log(squareCol, squareRow);
 
   ticTacToe(squareCol, squareRow);
 }
@@ -117,31 +114,31 @@ function checkForWin() {
   // Return true if h or v or d wins
 
   if (verticalWin() || horizontalWin() || diagonalWin()) {
-  return true;
+    console.log('win you beautiful bastard');
+    return true;
 }
 }
 
 function ticTacToe(row, column) {
-  // Manipulate the board array (place X or O) based on user input (row, column)
-  let selectedRow = board[row];
-  selectedRow[column] = playerTurn;
+  // Manipulate the board array (place X or O) based on where user clicks
+  board[row][column] = playerTurn;
 
 // Manipulate playerTurn variable, switch from X to O or 0 to X
 if (playerTurn === 'X') {
   playerTurn = 'O';
-} else if  (playerTurn === 'O') {
+} else {
   playerTurn = 'X';
 }
 }
 
-function getPrompt() {
-  printBoard();
-  console.log("It's Player " + playerTurn + "'s turn.");
-  rl.question('row: ', (row) => {
-    rl.question('column: ', (column) => {
-      ticTacToe(row, column);
-      getPrompt();
-    });
-  });
+// function getPrompt() {
+//   printBoard();
+//   console.log("It's Player " + playerTurn + "'s turn.");
+//   rl.question('row: ', (row) => {
+//     rl.question('column: ', (column) => {
+//       ticTacToe(row, column);
+//       getPrompt();
+//     });
+//   });
 
-}
+// }
