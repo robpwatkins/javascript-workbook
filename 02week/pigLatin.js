@@ -1,11 +1,12 @@
 'use strict';
 
-const assert = require('assert');
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+document.getElementById('button').addEventListener('click', fn1);
+
+function fn1() {
+  let str = document.getElementById('thisGuy').value;
+  document.getElementById('pigLatin').innerText=(pigLatin(str));
+}
+
 
 
 function pigLatin(word) {
@@ -48,55 +49,3 @@ function findFirstVowelPosition(word) {
       }
     }
   }
-// }
-  
-
-//   if (vowels.includes(firstLetter)) {
-//     return word + 'yay';
-// } else {
-//   return word + 'ay';
-
-  // (vowels.includes(secondLetter)) {
-  //   return word.shift
-  // }
-
-
-
-
-function getPrompt() {
-  rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
-    getPrompt();
-  });
-}
-
-// Tests
-
-if (typeof describe === 'function') {
-
-  describe('#pigLatin()', () => {
-    it('should translate a simple word', () => {
-      assert.equal(pigLatin('car'), 'arcay');
-      assert.equal(pigLatin('dog'), 'ogday');
-    });
-    it('should translate a complex word', () => {
-      assert.equal(pigLatin('create'), 'eatecray');
-      assert.equal(pigLatin('valley'), 'alleyvay');
-    });
-    it('should attach "yay" if word begins with vowel', () => {
-      assert.equal(pigLatin('egg'), 'eggyay');
-      assert.equal(pigLatin('emission'), 'emissionyay');
-    });
-    it('should lowercase and trim word before translation', () => {
-      assert.equal(pigLatin('HeLlO '), 'ellohay');
-      assert.equal(pigLatin(' RoCkEt'), 'ocketray');
-    });
-    // it('should separate two words and return them together', () => {
-    //   assert.equal(pigLatin('Hop Fest'), 'Ophay Estfay');
-    // })
-  });
-} else {
-
-  getPrompt();
-
-}
