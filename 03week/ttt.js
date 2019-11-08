@@ -18,10 +18,7 @@ function handleClick (event) {
   let squareCol = square.dataset.col;
   let squareRow = square.dataset.row;
 
-  ticTacToe(squareCol, squareRow);
-  board[0][0] = event.target;
-  board[0][1] = event.target;
-  board[0][2] = event.target;
+  ticTacToe(squareRow, squareCol);
 }
 
 let board = [
@@ -118,14 +115,16 @@ function checkForWin() {
 
   if (verticalWin() || horizontalWin() || diagonalWin()) {
     console.log('win you beautiful bastard');
+    document.getElementById('winBanner').innerText = 'You did it!!!'
     return true;
 }
 }
 
-function ticTacToe() {
+function ticTacToe(row, column) {
   // Manipulate the board array (place X or O) based on where user clicks
-  // board[row][column] = playerTurn;
-
+  board[row][column] = playerTurn;
+  checkForWin();
+  
 // Manipulate playerTurn variable, switch from X to O or 0 to X
 if (playerTurn === 'X') {
   playerTurn = 'O';
