@@ -19,6 +19,9 @@ function handleClick (event) {
   let squareRow = square.dataset.row;
 
   ticTacToe(squareCol, squareRow);
+  board[0][0] = event.target;
+  board[0][1] = event.target;
+  board[0][2] = event.target;
 }
 
 let board = [
@@ -119,9 +122,9 @@ function checkForWin() {
 }
 }
 
-function ticTacToe(row, column) {
+function ticTacToe() {
   // Manipulate the board array (place X or O) based on where user clicks
-  board[row][column] = playerTurn;
+  // board[row][column] = playerTurn;
 
 // Manipulate playerTurn variable, switch from X to O or 0 to X
 if (playerTurn === 'X') {
