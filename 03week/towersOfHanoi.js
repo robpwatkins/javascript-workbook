@@ -57,6 +57,10 @@ if (typeof describe === 'function') {
     it('should be able to move a block', () => {
       towersOfHanoi('a', 'b');
       assert.deepEqual(stacks, { a: [4, 3, 2], b: [1], c: [] });
+
+      // A free first additional unit test for you ;)
+      // towersOfHanoi('a', 'c');
+      // assert.deepEqual(stacks, { a: [4, 3], b: [1], c: [2] });
     });
   });
 

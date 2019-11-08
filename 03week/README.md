@@ -20,3 +20,5 @@
 4. Check if game is won with checkForWin() function
     - When all blocks are stacked into column 2 or 1 return true otherwise false
     - Nice to have (but not required): console log a winning message
+
+5. Additional tests: fine if they're only sightly different than other tests
