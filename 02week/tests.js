@@ -72,7 +72,7 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
     it('should check to make sure user entry is valid', () => {
-      assert.equal(rockPaperScissors('rock', 'paper', 'scissors'));
+      assert.equal(rockPaperScissors('shoot', 'dont'), "WRONG.");
     });
   });
 } else {
