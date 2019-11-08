@@ -14,6 +14,7 @@ function handleClick (event) {
 
   let square = event.target;
   square.textContent = playerTurn;
+  square.removeEventListener('click', handleClick);
 
   let squareCol = square.dataset.col;
   let squareRow = square.dataset.row;
