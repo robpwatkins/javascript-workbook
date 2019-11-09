@@ -116,12 +116,12 @@ function checkForWin() {
 
   if (verticalWin() || horizontalWin() || diagonalWin()) {
     // console.log('win you beautiful bastard');
-    if (playerTurn === 'O') {
-    document.getElementById('winBanner').innerText = 'Or O did!!!';
-    } else {
-    document.getElementById('winBanner').innerText = 'X did it!!!';
+    if (playerTurn = '0') {
+    document.getElementById('winBanner').innerText = 'You did it!!!';
+  } else {
+    document.getElementById('winBanner').innerText = 'Or O did it!!!';
     }
-    // return true;
+    return true;
 }
 }
 
@@ -130,7 +130,7 @@ function ticTacToe(row, column) {
   board[row][column] = playerTurn;
   checkForWin();
   
-// Manipulate playerTurn variable, switch from X to O or O to X
+// Manipulate playerTurn variable, switch from X to O or 0 to X
 if (playerTurn === 'X') {
   playerTurn = 'O';
 } else {
