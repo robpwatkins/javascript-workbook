@@ -4,10 +4,11 @@ squares.forEach((item) => {
   item.addEventListener('click', handleClick);
 });
 
-// function resetGame() {
-//   playerTurn = 'X';
-//   square.textContent = '';
+// function resetGame(item) {
+//   console.log('u did it');
 // }
+
+// document.getElementById('replay').addEventListener('click', resetGame);
 
 function handleClick (event) {
   console.log({target: event.target});
@@ -116,12 +117,13 @@ function checkForWin() {
 
   if (verticalWin() || horizontalWin() || diagonalWin()) {
     // console.log('win you beautiful bastard');
-    if (playerTurn === 'O') {
-    document.getElementById('winBanner').innerText = 'Or O did!!!';
+    if (playerTurn === 'X') {
+    document.getElementById('winBanner').innerText = 'X wins!!!';
     } else {
-    document.getElementById('winBanner').innerText = 'X did it!!!';
+    document.getElementById('winBanner').innerText = 'O wins!!!';
     }
     // return true;
+    // document.getElementById('replay').style.display = 'block';
 }
 }
 
