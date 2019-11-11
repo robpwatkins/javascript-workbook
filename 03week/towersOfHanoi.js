@@ -13,6 +13,9 @@ let stacks = {
   c: []
 };
 
+let startStack = [4, 3, 2, 1];
+let endStack = [];
+
 function printStacks() {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
@@ -21,12 +24,22 @@ function printStacks() {
 
 function movePiece() {
   // Your code here
+  // if ((endStack.length - 1) > startStack.length - 1)
 
 }
 
 function isLegal() {
   // Your code here
+  let startPiece = startStack[startStack.length -1];
+  let endPiece = endStack[endStack.length - 1];
+  
+  if (endPiece == null) {
+    endPiece = 0;
+  }
 
+  if (startPiece > endPiece) {
+    return false;
+  }
 }
 
 function checkForWin() {

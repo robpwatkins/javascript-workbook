@@ -22,3 +22,52 @@
     - Nice to have (but not required): console log a winning message
 
 5. Additional tests: fine if they're only sightly different than other tests
+
+
+movePiece()
+- legal move
+    - if the last number of endStack[] > the last number of startStack[]
+    - else illegal
+
+    if (endStack[endStack.length-1] > startStack[startStack.length-1]) {
+        take last number from startStack[]
+        and put it at end of endStack[]
+    }
+        -----need to permanantly remove last number from startStack[]
+            -----use .pop()
+        -----return its value
+            -----startStack.pop()
+        -----add that value permanantly to end of endStack
+            -----use .push()
+            -----endStack.push(startStack.pop())? maybe?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
