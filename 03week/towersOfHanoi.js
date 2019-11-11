@@ -13,8 +13,12 @@ let stacks = {
   c: []
 };
 
-let startStack = [4, 3, 2, 1];
-let endStack = [];
+// let a = stacks.a;
+// let b = stacks.b;
+// let c = stacks.c;
+
+// let startStack = [4, 3, 2, 1];
+// let endStack = [];
 
 function printStacks() {
   console.log("a: " + stacks.a);
@@ -23,33 +27,38 @@ function printStacks() {
 }
 
 function movePiece() {
-  // Your code here
-  // if ((endStack.length - 1) > startStack.length - 1)
-
+  endStack = [1, 2];
 }
 
-function isLegal() {
+// function isLegal(startStack, endStack) {
   // Your code here
-  let startPiece = startStack[startStack.length -1];
-  let endPiece = endStack[endStack.length - 1];
+//   let startPiece = startStack[startStack.length -1];
+//   let endPiece = endStack[endStack.length - 1];
+
+  // let startPiece = stacks.a[stacks.a.length - 1];
+  // let endPiece = stacks.b[stacks.b.length - 1];
   
-  if (endPiece == null) {
-    endPiece = 0;
-  }
+  // if (endPiece == null) {
+  //   endPiece = 0;
+  // }
 
-  if (startPiece > endPiece) {
-    return false;
-  }
-}
+  // if (startPiece > endPiece) {
+  //   return false;
+  // } else {
+  //   return true;
+  // }
+// }
 
 function checkForWin() {
   // Your code here
-
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
+  // let a = stacks.a;
+  // let b = stacks.b;
+  // let c = stacks.c;
+  movePiece();
+  
 }
 
 function getPrompt() {
