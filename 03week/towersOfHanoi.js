@@ -13,13 +13,6 @@ let stacks = {
   c: []
 };
 
-// let a = stacks.a;
-// let b = stacks.b;
-// let c = stacks.c;
-
-// let startStack = [4, 3, 2, 1];
-// let endStack = [];
-
 function printStacks() {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
@@ -27,10 +20,10 @@ function printStacks() {
 }
 
 function movePiece() {
-
+  // You code here
 }
 
-function isLegal(startStack, endStack) {
+function isLegal() {
   // Your code here
 //   let startPiece = startStack[startStack.length -1];
 //   let endPiece = endStack[endStack.length - 1];
@@ -54,10 +47,6 @@ function checkForWin() {
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // let a = stacks.a;
-  // let b = stacks.b;
-  // let c = stacks.c;
-  // movePiece();
   
 }
 
