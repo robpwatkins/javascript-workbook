@@ -28,8 +28,10 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateHint() {
+function generateHint(guess) {
   // your code here
+  let solutionArray = [];
+  let guessArray = [];
 }
 
 function mastermind(guess) {
