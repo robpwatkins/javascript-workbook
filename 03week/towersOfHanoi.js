@@ -27,10 +27,10 @@ function printStacks() {
 }
 
 function movePiece() {
-  endStack = [1, 2];
+
 }
 
-// function isLegal(startStack, endStack) {
+function isLegal(startStack, endStack) {
   // Your code here
 //   let startPiece = startStack[startStack.length -1];
 //   let endPiece = endStack[endStack.length - 1];
@@ -47,7 +47,7 @@ function movePiece() {
   // } else {
   //   return true;
   // }
-// }
+}
 
 function checkForWin() {
   // Your code here
@@ -57,7 +57,7 @@ function towersOfHanoi(startStack, endStack) {
   // let a = stacks.a;
   // let b = stacks.b;
   // let c = stacks.c;
-  movePiece();
+  // movePiece();
   
 }
 
