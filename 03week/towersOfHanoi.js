@@ -131,6 +131,8 @@ if (typeof describe === 'function') {
         c: []
       };
       assert.equal(isLegal('a', 'c'), true);
+// 2ND ADDITIONAL TEST
+      assert.equal(isLegal('a', 'b'), true);
     });
   });
   describe('#checkForWin()', () => {
@@ -138,6 +140,9 @@ if (typeof describe === 'function') {
       stacks = { a: [], b: [4, 3, 2, 1], c: [] };
       assert.equal(checkForWin(), true);
       stacks = { a: [1], b: [4, 3, 2], c: [] };
+      assert.equal(checkForWin(), false);
+// 3RD ADDITIONAL TEST
+      stacks = { a: [4], b: [2, 1], c: [3] };
       assert.equal(checkForWin(), false);
     });
   });
