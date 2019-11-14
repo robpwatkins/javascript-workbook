@@ -1,6 +1,19 @@
 'use strict';
 
+<<<<<<< HEAD
 document.getElementById('button').addEventListener('click', fn1);
+=======
+const assert = require('assert');
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+
+function pigLatin(word) {
+
+>>>>>>> gh-pages
 
 function fn1() {
   let str = document.getElementById('thisGuy').value;
