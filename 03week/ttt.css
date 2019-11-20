@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: hotpink;
+}
+
+#title {
+  margin: 25px 0 0 0;
+  font-size: 75px;
+  color: white;
+  text-align: center;
+}
+
+#winBanner {
+  height: 35px;
+  color: white;
+  text-align: center;
+  font-size: 35px;
+}
+
+#replayBox {
+  height: 30px;
+  padding-top: 5px;
+}
+
+#replay {
+  display: none;
+  cursor: pointer;
+  height: 30px;
+  width: 95px;
+  text-align: center;
+  line-height: 27px;
+  margin: 0 auto;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#replay:hover {
+  color: hotpink;
+  background: white;
+}
+
+.game-grid {
+  height: 75%;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 15px auto;
+  border: 2px solid white;
+}
+
+.board-square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 55px;
+  border: 3px solid white;
+}
