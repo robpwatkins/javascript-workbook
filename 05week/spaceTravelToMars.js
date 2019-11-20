@@ -19,11 +19,17 @@ constructor(name, job, specialSkill, ship) {
   this.name = name;
   this.job = job;
   this.specialSkill = specialSkill;
-  // this.ship = ship;
 }
 }
 
 class Ship {
+  missionStatement() {
+    if (this.crew.length > 0) {
+      return (this.ability)
+    } else {
+      return "Can't perform a mission yet."
+    }
+  }
   constructor(name, type, ability, crew) {
     this.name = name;
     this.type = type;
