@@ -11,30 +11,30 @@ let jobTypes = {
 
 // Your code here
 class CrewMember {
+  constructor(name, job, specialSkill) {
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+  }
   enterShip(ship) {
     this.ship = ship;
     ship.crew.push(this);
   }
-constructor(name, job, specialSkill, ship) {
-  this.name = name;
-  this.job = job;
-  this.specialSkill = specialSkill;
-}
 }
 
 class Ship {
+  constructor(name, type, ability, crew) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
   missionStatement() {
     if (this.crew.length > 0) {
       return (this.ability)
     } else {
       return "Can't perform a mission yet."
     }
-  }
-  constructor(name, type, ability, crew) {
-    this.name = name;
-    this.type = type;
-    this.ability = ability;
-    this.crew = [];
   }
 }
 
