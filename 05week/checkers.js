@@ -60,9 +60,56 @@ class Board {
       console.log(string);
     };
 
+    //  createCheckers = function () {
+//   const whitePositions = [
+//     [0, 1],
+//     [0, 3],
+//     [0, 5],
+//     [0, 7],
+//     [1, 0],
+//     [1, 2],
+//     [1, 4],
+//     [1, 6],
+//     [2, 1],
+//     [2, 3],
+//     [2, 5],
+//     [2, 7],
+//   ];
+
+  // this.grid[0, 1] = white;
+  // for (let i = 0; i < whitePositions.length; i++) {
+    
+  // }
+  // const blackPositions = [
+  //   [5, 0],
+  //   [5, 2],
+  //   [5, 4],
+  //   [5, 6],
+  //   [6, 1],
+  //   [6, 3],
+  //   [6, 5],
+  //   [6, 7],
+  //   [7, 0],
+  //   [7, 2],
+  //   [7, 4],
+  //   [7, 6],
+  // ];
+
+  // for (let i = 0; i < blackPositions.length; i++) {
+  //   i[1].color = black;
+  // }
+
+//  }
+
+ //  selectChecker() {
+ 
+ //  }
+ 
+ //  killChecker() {
+ 
+ //  }
 
     this.createCheckers = function() {
-      // [row, column]
       const whitePositions = [
         [0, 1],
         [0, 3],
@@ -137,24 +184,24 @@ class Game {
           this.board.checkers.pop();
         }
       } else {
-        console.log('Illegal Move');
+        console.log('Nope');
       }      
     }
   }
 }
 
 const isLegalInput = (startRow, startColumn, endRow, endColumn) => {
-  const sourceGood = (startRow >= 0 && startRow < 8) && (startColumn >= 0 && startColumn < 8);
-  const destinationGood = (endRow >= 0 && endRow < 8) && (endColumn >= 0 && endColumn < 8);
-  return sourceGood && destinationGood;
+  const legalStart = (startRow >= 0 && startRow < 8) && (startColumn >= 0 && startColumn < 8);
+  const legalEnd = (endRow >= 0 && endRow < 8) && (endColumn >= 0 && endColumn < 8);
+  return legalStart && legalEnd;
 }
 
 const isLegalMove = (startRow, startColumn, endRow, endColumn) => {
-  const goodRowValue = (Math.abs(endRow - startRow));
-  const goodColumnValue = (Math.abs(endColumn - startColumn));
-  if (goodRowValue === 1 && goodColumnValue === 1){
+  const valLegalRow = (Math.abs(endRow - startRow));
+  const valLegalCol = (Math.abs(endColumn - startColumn));
+  if (valLegalRow === 1 && valLegalCol === 1){
     return true;
-  } else if  (goodRowValue === 2 && goodColumnValue === 2) {
+  } else if  (valLegalRow === 2 && valLegalCol === 2) {
     return true;
   } else{
     return false;
