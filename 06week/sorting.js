@@ -107,13 +107,37 @@ const weather = [
     visibility: 11.14056410562316,
     predictability: 71
   },
-],
+];
 
 //using a higher order function, create an array of the unique 'weather_state_name' values of the weather array. Your function should return the following array ['Light Cloud', 'Heavy Cloud', 'Showers']
-const weatherStates = 
-console.log(weatherStates)
+
+function weatherTime () {
+  let weatherStatesAll = weather.map(x => x.weather_state_name);
+  let noDuplicates = weatherStatesAll => weatherStatesAll.filter((item, index) => weatherStatesAll.indexOf(item) == index);
+  let noDuplicateWeather = noDuplicates(weatherStatesAll);
+  return noDuplicateWeather;
+}
+
+
+const weatherStates = weatherTime ();
+
+console.log(weatherStates);
 
 //find the id of the object in weather that has a min_temp of 15.915
 
-const idealTemp =
-console.log(idealTemp)
+
+function weatherIndex () {
+  for (let i = 0; i < weather.length; i++) {
+    if (weather[i].min_temp === 15.915) {
+      let idealTemp = weather[i].id;
+      return idealTemp;
+    }
+  }
+}
+
+const idealTemp = weatherIndex();
+console.log(idealTemp);
+
+// const idealTemp = weatherIndex();
+
+// console.log(idealTemp);
