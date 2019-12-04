@@ -30,9 +30,17 @@ console.log(sumEvens);
 // // Find the index of the first value when added to it's index = 512 (#ATX!!)
 // const atxIdx;
 
-for (let i = 0; i < strNums.length; i++) {
-  if (strNums[i] + [i] === 512) 
+function findAtx () {
+  for (let i = 0; i < strNums.length; i++) {
+    if (Number(strNums[i]) + Number([i]) === 512) {
+      return i;
+    }
+  }
 }
+
+const atxIdx = findAtx();
+
+console.log(atxIdx);
 
 // console.log(`index: ${atxIdx}, value: ${nums[atxIdx]}`);
 
