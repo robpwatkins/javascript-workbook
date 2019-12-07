@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.inputBox {
+  margin: 50px 0 0 0;
+}
+
+#input {
+  width: 250px;
+  height: 35px;
+}
+
+button {
+  /* width: 25px; */
+  /* height: 35px; */
+}
+
+#hangedText {
+  height: 350px;
+  width: 550px;
+  margin: 50px auto;
+  border: 1px solid black;
+}
