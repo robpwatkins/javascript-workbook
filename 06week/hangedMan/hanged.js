@@ -15,20 +15,25 @@ document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${gu
 
 function buttonClicked () {
   let inputLetter = document.getElementById('input').value;
-  let number = 0;
+  let isIt = 'yes';
+  let wrongGuesses = []
   for (let i = 0; i < targetPhrase.length; i++) {
     if (inputLetter === targetPhrase[i]) {
       targetHint[i] = inputLetter;
     } else 
-    number++;
-    // return number;
+    isIt = 'no';
   }
-  if (number > 24) {
+  if (isIt = 'no') {
     guessesLeft--;
+    wrongGuesses.push(inputLetter);
+    console.log(wrongGuesses);
   }
   document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${guessesLeft}`;
   document.getElementById('input').value = '';
   document.getElementById('hangedText').innerHTML = targetHint.join('');
+  if (targetHint.join('') === 'javascript&nbsp&nbspis&nbsp&nbspfor&nbsp&nbspwinners') {
+    document.getElementById('guessesLeft').innerHTML = 'YOU GOT IT!'
+  }
   if (guessesLeft <= 0) {
     document.getElementById('guessesLeft').innerHTML = 'GAME OVER!';
   }

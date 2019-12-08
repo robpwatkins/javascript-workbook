@@ -74,6 +74,12 @@ html, body {
   border: 1px solid black;
 }
 
+#wrongGuesses {
+  display: none;
+  font-size: 20px;
+  border: 1px solid black;
+}
+
 #hangedText {
   display: flex;
   justify-content: space-around;
