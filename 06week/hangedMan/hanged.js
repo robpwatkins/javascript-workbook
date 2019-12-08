@@ -1,6 +1,7 @@
 let targetPhrase = 'javascript is for winners'
 let targetHint = [];
 let guessesLeft = 5;
+let wrongGuesses = [];
 
 for (let i = 0; i < targetPhrase.length; i++) {
   if (targetPhrase[i] === ' ') {
@@ -16,7 +17,6 @@ document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${gu
 function buttonClicked () {
   let inputLetter = document.getElementById('input').value;
   let number = 0;
-  let wrongGuesses = []
   for (let i = 0; i < targetPhrase.length; i++) {
     if (inputLetter === targetPhrase[i]) {
       targetHint[i] = inputLetter;
@@ -26,6 +26,8 @@ function buttonClicked () {
   }
   if (number > 24) {
     guessesLeft--;
+    wrongGuesses.push(inputLetter);
+    document.getElementById('wrongGuesses').innerHTML = `WRONG GUESSES: ${wrongGuesses.join(', ')}`;
   }
   document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${guessesLeft}`;
   document.getElementById('input').value = '';
