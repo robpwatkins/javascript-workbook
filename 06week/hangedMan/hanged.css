@@ -20,8 +20,9 @@ button {
 }
 
 #hangedText {
-  height: 350px;
-  width: 550px;
+  height: 150px;
+  width: 450px;
   margin: 50px auto;
+  padding: 100px;
   border: 1px solid black;
 }
