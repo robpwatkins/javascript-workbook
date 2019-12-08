@@ -27,7 +27,7 @@ function buttonClicked () {
   if (number > 24) {
     guessesLeft--;
     wrongGuesses.push(inputLetter);
-    document.getElementById('wrongGuesses').innerHTML = `WRONG GUESSES: ${wrongGuesses.join(', ')}`;
+    document.getElementById('wrongGuesses').innerHTML = `INCORRECT GUESSES: ${wrongGuesses.join(', ')}`;
   }
   document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${guessesLeft}`;
   document.getElementById('input').value = '';
