@@ -50,6 +50,8 @@ const arrOfPeople = [
   },
 ]
 
+console.log('heyoo');
+
 const listOfPlayers = []
 const blueTeam = []
 const redTeam = []
