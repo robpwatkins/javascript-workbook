@@ -15,18 +15,17 @@ document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${gu
 
 function buttonClicked () {
   let inputLetter = document.getElementById('input').value;
-  let isIt = 'yes';
+  let number = 0;
   let wrongGuesses = []
   for (let i = 0; i < targetPhrase.length; i++) {
     if (inputLetter === targetPhrase[i]) {
       targetHint[i] = inputLetter;
     } else 
-    isIt = 'no';
+    number++;
+    // return number;
   }
-  if (isIt = 'no') {
+  if (number > 24) {
     guessesLeft--;
-    wrongGuesses.push(inputLetter);
-    console.log(wrongGuesses);
   }
   document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${guessesLeft}`;
   document.getElementById('input').value = '';
