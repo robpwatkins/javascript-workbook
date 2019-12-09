@@ -33,54 +33,14 @@ function isLegal(startStack, endStack) {
   } else {
     return true;
   }
-  
-  // let startPiece = stacks[startStack][stacks[startStack.length - 1]];
-  // let endPiece = stacks[endStack][stacks[endStack.length - 1]];
-
-  // if (endPiece === '' || startPiece < endPiece) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-
-  // if (removedPiece > endPiece) {
-  //   return false;
-  // } else {
-  //   return true;
-  // }
-
-  // let startPiece = stacks.a[stacks.a.length - 1];
-  // let endPiece = stacks.b[stacks.b.length - 1];
-  
-  // if (endPiece == null) {
-  //   endPiece > startPiece;
-  // }
-
-  // if (startPiece > endPiece) {
-  //   return false;
-  // } else {
-  //   return true;
-  // }
-
-  // if (endPiece === '' || startPiece < endPiece) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-
-  // if (startPiece > endPiece) {
-  //   return false;
-  // } else {
-  //   return true;
-  // }
 }
 
 function checkForWin() {
-  if (stacks.b.length == 4 || stacks.c.length == 4) {
-    return true;
-  } else {
-    return false;
-  }
+ if (stacks.b.length == 4) {
+   return true;
+ } else {
+   return false;
+ }
 }
 
 function towersOfHanoi(startStack, endStack) {
@@ -109,9 +69,9 @@ if (typeof describe === 'function') {
       towersOfHanoi('a', 'b');
       assert.deepEqual(stacks, { a: [4, 3, 2], b: [1], c: [] });
 
-// 1ST ADDITIONAL TEST
-      towersOfHanoi('a', 'c');
-      assert.deepEqual(stacks, { a: [4, 3], b: [1], c: [2] });
+      // A free first additional unit test for you ;)
+      // towersOfHanoi('a', 'c');
+      // assert.deepEqual(stacks, { a: [4, 3], b: [1], c: [2] });
     });
   });
 
@@ -131,8 +91,6 @@ if (typeof describe === 'function') {
         c: []
       };
       assert.equal(isLegal('a', 'c'), true);
-// 2ND ADDITIONAL TEST
-      assert.equal(isLegal('a', 'b'), true);
     });
   });
   describe('#checkForWin()', () => {
@@ -140,9 +98,6 @@ if (typeof describe === 'function') {
       stacks = { a: [], b: [4, 3, 2, 1], c: [] };
       assert.equal(checkForWin(), true);
       stacks = { a: [1], b: [4, 3, 2], c: [] };
-      assert.equal(checkForWin(), false);
-// 3RD ADDITIONAL TEST
-      stacks = { a: [4], b: [2, 1], c: [3] };
       assert.equal(checkForWin(), false);
     });
   });
