@@ -14,18 +14,17 @@ for (let i = 0; i < targetPhrase.length; i++) {
 document.getElementById('hangedText').innerHTML = targetHint.join('');
 document.getElementById('guessesLeft').innerHTML = `INCORRECT GUESSES LEFT: ${guessesLeft}`;
 
-function buttonClicked () {
+function hangedMan () {
   let inputLetter = document.getElementById('input').value;
   let number = 0;
-  for (let i = 0; i < targetPhrase.length; i++) {
-    if (inputLetter === targetPhrase[i]) {
-      targetHint[i] = inputLetter;
-    } else 
-    number++;
-    // return number;
-  }
-  if (number > 24) {
-    guessesLeft--;
+  if (targetPhrase.indexOf(inputLetter) !== -1) {
+    for (let i = 0; i < targetPhrase.length; i++) {
+      if (inputLetter === targetPhrase[i]) {
+        targetHint[i] = inputLetter;
+      } 
+    } 
+  } else {
+  guessesLeft--;
     wrongGuesses.push(inputLetter);
     document.getElementById('wrongGuesses').innerHTML = `INCORRECT GUESSES: ${wrongGuesses.join(', ')}`;
   }
@@ -45,5 +44,5 @@ function showAnswer () {
   document.getElementById('theAnswer').style.display = 'block';
 }
 
-document.getElementById('button').addEventListener('click', buttonClicked);
+document.getElementById('button').addEventListener('click', hangedMan);
 document.getElementById('answerButton').addEventListener('click', showAnswer);
