@@ -58,7 +58,12 @@ const redTeam = []
 // that requires canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience
 
 class DodgeBallPlayer {
-  constructor(canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience){
+  constructor(id, name, age, skillSet, placeBorn, canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience){
+    this.id = id;
+    this.name = name;
+    this.age = age;
+    this.skillSet = skillSet;
+    this.placeBord = placeBorn;
     this.canThrowBall = canThrowBall;
     this.canDodgeBall = canDodgeBall;
     this.hadPaid = hasPaid;
