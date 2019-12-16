@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.reset.css">
+  <link rel="stylesheet" href="./hanged.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="title">HANGMAN</div>
+  <div class="instructions">guess a letter:</div>
+  <div class="inputBox">
+    <input id="input" type="text" maxlength="1">
+    <button id="button">GUESS</button>
+  </div>
+  <div id="guessesLeft"></div>
+  <div class="hangedBox">
+    <div id="wrongGuesses"></div>
+    <div id="hangedText"></div>
+  </div>
+  <div class="answerBox">
+    <div class="showAnswer">Show answer:</div>
+    <button id="answerButton">SHOW</button>
+    <div id="theAnswer">javascript is for winners</div>
+  </div>
+
+<script src="hanged.js"></script>
+</body>
+</html>
