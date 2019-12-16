@@ -91,7 +91,7 @@ class DodgeBallPlayer {
   }
 }
 
-class blueTeammate extends DodgeBallPlayer {
+class BlueTeammate extends DodgeBallPlayer {
   constructor(color = 'blue', mascot = 'The Blue Dude', id, name, age, skillSet, placeBorn, canThrowBall = true, canDodgeBall = true, hasPaid = true, isHealthy = true, yearsExperience = 7){
     super(id, name, age, skillSet, placeBorn, canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience)
     this.color = color;
@@ -99,7 +99,7 @@ class blueTeammate extends DodgeBallPlayer {
   }
 }
 
-class redTeammate extends DodgeBallPlayer {
+class RedTeammate extends DodgeBallPlayer {
   constructor(color = 'red', mascot = 'The Red Lady', id, name, age, skillSet, placeBorn, canThrowBall = true, canDodgeBall = true, hasPaid = true, isHealthy = true, yearsExperience = 12){
     super(id, name, age, skillSet, placeBorn, canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience)
     this.color = color;
@@ -148,7 +148,7 @@ const makeBlueTeammate = (player) => {
   // blueTeam = [];
   let blueTeamMember = [];
   const listElement = document.getElementById('blue');
-  let newBlueTeammate = new blueTeammate(player.color, player.mascot, player.id, player.name, player.age, player.skillSet, player.placeBorn, player.canThrowBall, player.canDodgeBall, player.hasPaid, player.isHealthy, player.yearsExperience);
+  let newBlueTeammate = new BlueTeammate(player.color, player.mascot, player.id, player.name, player.age, player.skillSet, player.placeBorn, player.canThrowBall, player.canDodgeBall, player.hasPaid, player.isHealthy, player.yearsExperience);
   blueTeamMember.push(newBlueTeammate);
   blueTeamMember.map(player => {
     const li = document.createElement('li');
@@ -164,7 +164,7 @@ const makeRedTeammate = (player) => {
   // redTeam = [];
   let redTeamMember = [];
   const listElement = document.getElementById('red');
-  let newRedTeammate = new redTeammate(player.color, player.mascot, player.id, player.name, player.age, player.skillSet, player.placeBorn, player.canThrowBall, player.canDodgeBall, player.hasPaid, player.isHealthy, player.yearsExperience);
+  let newRedTeammate = new RedTeammate(player.color, player.mascot, player.id, player.name, player.age, player.skillSet, player.placeBorn, player.canThrowBall, player.canDodgeBall, player.hasPaid, player.isHealthy, player.yearsExperience);
   redTeamMember.push(newRedTeammate);
   redTeamMember.map(player => {
     const li = document.createElement('li');
@@ -183,7 +183,7 @@ const makeRedTeammate = (player) => {
 const assert = require('assert');
 
 describe('DodgeBallPlayer', function(){
-  it('should add player properties to person', function(){
+  it('should add player properties to the person object', function(){
     const person = {
       id: 2,
       name: "Charles Young",
@@ -196,16 +196,16 @@ describe('DodgeBallPlayer', function(){
   })
 })
 
-describe('makeRedTeammate', function(){
-  it('should add "color: red"', function(){
-    const player = new redTeammate
-    assert.equal(player.color, 'red');
+describe('BlueTeammate', function(){
+  it('should add two new keys to the player object', function(){
+   const bluePlayer = new BlueTeammate;
+    assert.equal(Object.keys(bluePlayer).length, '12');
   })
 })
 
-describe('makeBlueTeammate', function(){
-  it('should push "player" object to blueTeamMember array', function(){
-    // const player = new redTeammate
-    assert.equal(makeBlueTeammate(), 'blueTeam.length > 0');
+describe('RedTeammate', function(){
+  it('should add "The Red Lady" as the mascot for the player object', function(){
+    const player = new RedTeammate;
+    assert.equal(player.mascot, 'The Red Lady');
   })
 })
