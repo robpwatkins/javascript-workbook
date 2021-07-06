@@ -4,11 +4,11 @@ squares.forEach((item) => {
   item.addEventListener('click', handleClick);
 });
 
-// function resetGame(item) {
-//   console.log('u did it');
-// }
+function resetGame() {
+  squares.forEach(square => square.textContent = null);
+}
 
-// document.getElementById('replay').addEventListener('click', resetGame);
+document.getElementById('replay').addEventListener('click', resetGame);
 
 function handleClick (event) {
   console.log({target: event.target});
@@ -123,7 +123,7 @@ function checkForWin() {
     document.getElementById('winBanner').innerText = 'O wins!!!';
     }
     // return true;
-    // document.getElementById('replay').style.display = 'block';
+    document.getElementById('replay').style.display = 'block';
 }
 }
 
